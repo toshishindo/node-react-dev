@@ -21,9 +21,9 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      // callbackURL: '/auth/google/callback',
-      callbackURL: 'https://mighty-stream-98804.herokuapp.com/auth/google/callback'
-      // proxy: true
+      callbackURL: '/auth/google/callback',
+      // callbackURL: 'https://mighty-stream-98804.herokuapp.com/auth/google/callback'
+      proxy: true
     },
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ googleId: profile.id }).then(existingUser => {
